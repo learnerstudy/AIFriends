@@ -15,46 +15,73 @@ const router = createRouter({
       path: '/',
       component: HomepageIndex,
       name: 'homepage-index',
+      meta: {
+        needLogin: false,
+      },
     },
     {
       path: '/friend/',
       component: FriendIndex,
       name: 'friend-index',
+      meta: {
+        needLogin: true,
+      },
     },
     {
       path: '/create/',
       component: CreateIndex,
       name: 'create-index',
+      meta: {
+        needLogin: true,
+      },
     },
     {
       path: '/404/',
       component: NotFoundIndex,
       name: '404',
+      meta: {
+        needLogin: false,
+      },
     },
     {
       path: '/user/account/login/',
       component: LoginIndex,
       name: 'user-account-login-index',
+      meta: {
+        needLogin: false,
+      },
     },
     {
       path: '/user/account/register/',
       component: RegisterIndex,
       name: 'user-account-register-index',
+      meta: {
+        needLogin: false,
+      },
     },
     {
       path: '/user/space/:user_id/',
       component: SpaceIndex,
       name: 'user-space-index',
+      meta: {
+        needLogin: false,
+      },
     },
     {
       path: '/user/profile/',
       component: ProfileIndex,
       name: 'user-profile-index',
+      meta: {
+        needLogin: true,
+      },
     },
     {
       path: '/:pathMatch(.*)*',
       component: NotFoundIndex,
-      name: 'not_found'
+      name: 'not-found',
+      meta: {
+        needLogin: false,
+      },
     },
   ],
 })
